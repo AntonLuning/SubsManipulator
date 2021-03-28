@@ -15,14 +15,21 @@ using System.Windows.Shapes;
 
 namespace SubsManipulator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void fileButton_Click(object sender, RoutedEventArgs e)
+        {
+            SubsFile.Get_OriginalFile();
+        }
+
+        private void updateButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateSubs.Update_File(delayTextBox.Text);
         }
     }
 }
