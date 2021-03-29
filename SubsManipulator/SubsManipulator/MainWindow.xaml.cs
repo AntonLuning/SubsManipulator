@@ -17,6 +17,8 @@ namespace SubsManipulator
 {
     public partial class MainWindow : Window
     {
+        private SubsFile subsFile;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -24,12 +26,13 @@ namespace SubsManipulator
 
         private void fileButton_Click(object sender, RoutedEventArgs e)
         {
-            SubsFile.Get_OriginalFile();
+            subsFile = new SubsFile();
+            subsFile.Get_OriginalFile();
         }
 
         private void updateButton_Click(object sender, RoutedEventArgs e)
         {
-            UpdateSubs.Update_File(delayTextBox.Text);
+            subsFile.Update_File(subsFile, delayTextBox.Text);
         }
     }
 }
