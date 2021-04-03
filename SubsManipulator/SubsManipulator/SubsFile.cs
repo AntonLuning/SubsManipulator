@@ -8,12 +8,37 @@ namespace SubsManipulator
 {
     class SubsFile
     {
+        private string filePath;
         public string[] originalFile;
         public List<string> updatedFile;
         public void Get_OriginalFile()
         {
-            originalFile = System.IO.File.ReadAllLines(@"C:\Users\Anton\Downloads\Inception-English.srt");      // DO GENERIC
-            updatedFile = new List<string>();
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            dlg.DefaultExt = ".srt";
+            //dlg.Filter = "All files(*.*) | *.*";
+
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            { 
+                filePath = dlg.FileName;
+                MainWindow.appWindow.doneTextBlock.Visibility = System.Windows.Visibility.Hidden;
+                if (filePath.Substring(filePath.Length-3,3) == "srt")
+                {
+                    MainWindow.appWindow.fileTypeTextBlock.Visibility = System.Windows.Visibility.Hidden;
+                    originalFile = System.IO.File.ReadAllLines(@filePath);
+                    updatedFile = new List<string>();
+                    MainWindow.appWindow.delayTextBox.IsEnabled = true;
+                    MainWindow.appWindow.updateButton.IsEnabled = true;
+                }  
+                else
+                {
+                    MainWindow.appWindow.fileTypeTextBlock.Visibility = System.Windows.Visibility.Visible;
+                    MainWindow.appWindow.delayTextBox.IsEnabled = false;
+                    MainWindow.appWindow.updateButton.IsEnabled = false;
+                }
+            }
         }
 
         public void Update_File(SubsFile subsfile, string delay)
@@ -27,6 +52,13 @@ namespace SubsManipulator
                 }
                 subsfile.updatedFile.Add(subsLine);
             }
+            string[] newFile = new string[subsfile.updatedFile.Count];
+            for (int i = 0; i < newFile.Length; i++)
+            {
+                newFile[i] = subsfile.updatedFile[i];
+            }
+            System.IO.File.WriteAllLines(subsfile.filePath, newFile);
+            MainWindow.appWindow.doneTextBlock.Visibility = System.Windows.Visibility.Visible;
         }
 
         private string Manipulate_Time(string originalTimeLine, string delay)

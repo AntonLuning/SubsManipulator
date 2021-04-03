@@ -18,10 +18,12 @@ namespace SubsManipulator
     public partial class MainWindow : Window
     {
         private SubsFile subsFile;
+        public static MainWindow appWindow;
 
         public MainWindow()
         {
             InitializeComponent();
+            appWindow = this;
         }
 
         private void fileButton_Click(object sender, RoutedEventArgs e)
