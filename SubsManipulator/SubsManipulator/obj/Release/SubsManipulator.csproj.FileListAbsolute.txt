@@ -1,0 +1,16 @@
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\bin\Release\SubsManipulator.exe.config
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\bin\Release\SubsManipulator.exe
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\bin\Release\SubsManipulator.pdb
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\SubsManipulator.csprojAssemblyReference.cache
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\MainWindow.g.cs
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\App.g.cs
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\SubsManipulator_MarkupCompile.cache
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\SubsManipulator_MarkupCompile.lref
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\MainWindow.baml
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\SubsManipulator.g.resources
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\SubsManipulator.Properties.Resources.resources
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\SubsManipulator.csproj.GenerateResource.cache
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\SubsManipulator.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\SubsManipulator.exe
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\SubsManipulator.pdb
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Release\App.baml

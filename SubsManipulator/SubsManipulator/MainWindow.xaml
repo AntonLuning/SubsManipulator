@@ -5,27 +5,83 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SubsManipulator"
         mc:Ignorable="d"
-        Title="Subs Manipualtor" Height="400" Width="600" Background="DarkSlateGray" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize">
-    
-    <Grid Margin="50">
-        <TextBlock Text="Manipulate Subtitles Time-Stamps" HorizontalAlignment="Left"
-                   VerticalAlignment="Top" FontSize="20"/>
-        <Button x:Name="fileButton" Content="Choose File" Width="110" Height="50" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                Margin="80,0,0,0" Click="fileButton_Click"/>
-        <TextBox x:Name="delayTextBox" Height="30" Width="100" FontSize="16"
-                 HorizontalAlignment="Left" VerticalAlignment="Center"
-                 Margin="250,0,0,0" IsEnabled="False" />
-        <TextBlock Text="Milliseconds (ms)" HorizontalAlignment="Left" FontSize="12"
-                   VerticalAlignment="Center" Margin="360,0,0,0" />
-        <Button x:Name="updateButton" Content="Update Subs" Width="100" Height="40" 
-                HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False"
-                Margin="0,180,0,0" Background="Green" Click="updateButton_Click"/>
+        Title="Subs Manipualtor" Height="500" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize">
+    <Window.Background>
+        <ImageBrush ImageSource="film_wallpaper.jpg" Opacity="0.8"/>
+    </Window.Background>
 
-        <TextBlock x:Name="fileTypeTextBlock" Text="Please choose an .SRT file" FontSize="10" 
-                   Foreground="Red" Margin="80,165,0,0" Visibility="Hidden" />
-        <TextBlock x:Name="doneTextBlock" Text="Subs Updated!" FontSize="12" 
-                   HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="Red"
-                   Margin="0,0,40,35" Visibility="Hidden" />
+    <Grid Margin="20">
+        <Rectangle Fill="#BF000000" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Height="1000" Width="1000"/>
+
+        <TextBlock Text="Manipulate Subtitles Time-Stamps" HorizontalAlignment="Center" Margin="0,30,0,0"
+                   VerticalAlignment="Top" FontSize="20" Foreground="#CCFFFFFF"/>
+
+        <Button x:Name="fileButton" Content="Choose File" Width="140" Height="40"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White"      
+                Margin="0,120,0,0" Click="FileButton_Click" FontSize="13" >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="bdr_main" CornerRadius="20" Margin="1" Background="#1C536F" >
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bdr_main" Property="Background" Value="#1C435F"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="bdr_main" Property="Background" Value="#1C233F"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock x:Name="fileNameTextBlock" Text="" FontSize="11" Width="170"
+                   VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Left"
+                   Foreground="White" Margin="365,130,0,0" Visibility="Hidden" />
+        <TextBlock x:Name="fileTypeTextBlock" Text="Please choose an .SRT file" FontSize="10"
+                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                   Foreground="Red" Margin="0,165,0,0" Visibility="Hidden" />
+
+        <TextBlock Text="Delay:" HorizontalAlignment="Center" FontSize="16"
+                   VerticalAlignment="Top" Margin="-130,205,0,0" Foreground="White" />
+        <TextBox x:Name="delayTextBox" Height="30" Width="50" FontSize="16"
+                 HorizontalAlignment="Center" VerticalAlignment="Top"
+                 Margin="0,200,0,0" IsEnabled="False" />
+        <TextBlock Text="Seconds (s)"  HorizontalAlignment="Center" FontSize="12"
+                   VerticalAlignment="Top" Margin="140,210,0,0" Foreground="White" />
+
+        <Button x:Name="updateButton" Content="Update Subs" Width="140" Height="40" 
+                HorizontalAlignment="Center" VerticalAlignment="Top" IsEnabled="False"
+                Margin="0,310,0,0" Foreground="White" Click="UpdateButton_Click" >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="bdr_main" CornerRadius="20" Margin="1" Background="#1C732F" >
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bdr_main" Property="Background" Value="#1C631F"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="bdr_main" Property="Background" Value="#1C430F"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="bdr_main" Property="Background" Value="#CC1C330F"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock x:Name="doneTextBlock" Text="Subs Updated!" FontSize="14" 
+                   HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Red"
+                   Margin="0,370,0,0" Visibility="Hidden" />
+
+        <TextBlock Text="0.1 - 2021" FontSize="10" Foreground="White"
+                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                   Margin="15,10"/>
+        <TextBlock Text="By Anton Lüning" FontSize="10" Foreground="White"
+                   HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                   Margin="15,10"/>
     </Grid>
 </Window>

@@ -26,13 +26,13 @@ namespace SubsManipulator
             appWindow = this;
         }
 
-        private void fileButton_Click(object sender, RoutedEventArgs e)
+        private void FileButton_Click(object sender, RoutedEventArgs e)
         {
             subsFile = new SubsFile();
             subsFile.Get_OriginalFile();
         }
 
-        private void updateButton_Click(object sender, RoutedEventArgs e)
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             subsFile.Update_File(subsFile, delayTextBox.Text);
         }

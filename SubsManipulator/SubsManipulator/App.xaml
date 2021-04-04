@@ -4,6 +4,33 @@
              xmlns:local="clr-namespace:SubsManipulator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!-- Upload Button Template -->
+        <Style x:Key="UploadButton" TargetType="Button">
+            <Setter Property="Background" Value="#1C536F" />
+            <Setter Property="Foreground" Value="#FEFEFE" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" Background="#1C536F">
+                            <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1C036F"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#005300"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Update Button Template -->
+        
+        
+
     </Application.Resources>
 </Application>

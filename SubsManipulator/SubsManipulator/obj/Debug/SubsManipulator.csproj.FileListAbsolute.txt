@@ -28,3 +28,4 @@ C:\Users\Anton\Documents\Projekt\SubsManipulator\SubsManipulator\SubsManipulator
 C:\Users\Anton\Documents\Projekt\SubsManipulator\SubsManipulator\SubsManipulator\obj\Debug\SubsManipulator.csproj.CoreCompileInputs.cache
 C:\Users\Anton\Documents\Projekt\SubsManipulator\SubsManipulator\SubsManipulator\obj\Debug\SubsManipulator.exe
 C:\Users\Anton\Documents\Projekt\SubsManipulator\SubsManipulator\SubsManipulator\obj\Debug\SubsManipulator.pdb
+C:\Users\Anton\Documents\Privat\SubsManipulator\SubsManipulator\SubsManipulator\obj\Debug\App.baml
