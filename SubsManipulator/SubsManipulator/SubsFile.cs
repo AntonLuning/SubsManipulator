@@ -47,34 +47,37 @@ namespace SubsManipulator
 
         public void Update_File(SubsFile subsfile, string delayStr)
         {
-            if (delayStr == "")
+            double delay;
+            if (delayStr == "" || !Double.TryParse(delayStr, out delay) || delay == 0 || delay > 120 || delay < -120)
             {
                 MainWindow.appWindow.delayTextBox.BorderBrush = System.Windows.Media.Brushes.Red;
+                return;
             }
-            else
-            {
-                double delay = double.Parse(delayStr);
-                delay = delay * 1000;
 
-                foreach (string line in subsfile.originalFile)
+            delay *= 1000;
+
+            foreach (string line in subsfile.originalFile)
+            {
+                string subsLine = line;
+                if (line.Length > 15 && line.Substring(13, 3) == "-->")
                 {
-                    string subsLine = line;
-                    if (line.Length > 15 && line.Substring(13, 3) == "-->")
-                    {
-                        subsLine = Manipulate_Time(line, delay);
-                    }
-                    subsfile.updatedFile.Add(subsLine);
+                    subsLine = Manipulate_Time(line, delay);
                 }
-                string[] newFile = new string[subsfile.updatedFile.Count];
-                for (int i = 0; i < newFile.Length; i++)
-                {
-                    newFile[i] = subsfile.updatedFile[i];
-                }
-                System.IO.File.WriteAllLines(subsfile.filePath, newFile);
-                MainWindow.appWindow.doneTextBlock.Visibility = System.Windows.Visibility.Visible;
-                MainWindow.appWindow.fileNameTextBlock.Visibility = System.Windows.Visibility.Hidden;
-                MainWindow.appWindow.delayTextBox.Text = "";
+                subsfile.updatedFile.Add(subsLine);
             }
+            string[] newFile = new string[subsfile.updatedFile.Count];
+            for (int i = 0; i < newFile.Length; i++)
+            {
+                newFile[i] = subsfile.updatedFile[i];
+            }
+            System.IO.File.WriteAllLines(subsfile.filePath, newFile);
+
+            MainWindow.appWindow.doneTextBlock.Visibility = System.Windows.Visibility.Visible;
+            MainWindow.appWindow.fileNameTextBlock.Visibility = System.Windows.Visibility.Hidden;
+            MainWindow.appWindow.delayTextBox.Text = "0,0";
+            MainWindow.appWindow.delayTextBox.BorderBrush = System.Windows.Media.Brushes.White;
+            MainWindow.appWindow.delayTextBox.IsEnabled = false;
+            MainWindow.appWindow.updateButton.IsEnabled = false;
         }
 
         private string Manipulate_Time(string originalTimeLine, double delay)

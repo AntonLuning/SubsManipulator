@@ -38,18 +38,20 @@
         </Button>
         <TextBlock x:Name="fileNameTextBlock" Text="" FontSize="11" Width="170"
                    VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Left"
-                   Foreground="White" Margin="365,130,0,0" Visibility="Hidden" />
+                   Foreground="White" Margin="365,132,0,0" Visibility="Hidden" />
         <TextBlock x:Name="fileTypeTextBlock" Text="Please choose an .SRT file" FontSize="10"
                    VerticalAlignment="Top" HorizontalAlignment="Center"
                    Foreground="Red" Margin="0,165,0,0" Visibility="Hidden" />
 
         <TextBlock Text="Delay:" HorizontalAlignment="Center" FontSize="16"
-                   VerticalAlignment="Top" Margin="-130,205,0,0" Foreground="White" />
-        <TextBox x:Name="delayTextBox" Height="30" Width="50" FontSize="16"
+                   VerticalAlignment="Top" Margin="-125,205,0,0" Foreground="White" />
+        <TextBox x:Name="delayTextBox" Height="26" Width="60" FontSize="16"
                  HorizontalAlignment="Center" VerticalAlignment="Top"
-                 Margin="0,200,0,0" IsEnabled="False" />
+                 Margin="0,205,0,0" IsEnabled="False" Background="#FF0D3149"
+                 BorderThickness="0,0,0,2" Foreground="White" BorderBrush="#FFFFFF"
+                 HorizontalContentAlignment="Right" Text="0,0" />
         <TextBlock Text="Seconds (s)"  HorizontalAlignment="Center" FontSize="12"
-                   VerticalAlignment="Top" Margin="140,210,0,0" Foreground="White" />
+                   VerticalAlignment="Top" Margin="140,209,0,0" Foreground="White" />
 
         <Button x:Name="updateButton" Content="Update Subs" Width="140" Height="40" 
                 HorizontalAlignment="Center" VerticalAlignment="Top" IsEnabled="False"
@@ -77,7 +79,7 @@
                    HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Red"
                    Margin="0,370,0,0" Visibility="Hidden" />
 
-        <TextBlock Text="0.1 - 2021" FontSize="10" Foreground="White"
+        <TextBlock Text="0.2 - 2021" FontSize="10" Foreground="White"
                    HorizontalAlignment="Left" VerticalAlignment="Bottom"
                    Margin="15,10"/>
         <TextBlock Text="By Anton Lüning" FontSize="10" Foreground="White"
