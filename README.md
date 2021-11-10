@@ -1,2 +1,2 @@
 # SubsManipulator
-Manipulate time stamps in subtitles (.SRT)
+Offset time stamps in subtitles files (.SRT)
